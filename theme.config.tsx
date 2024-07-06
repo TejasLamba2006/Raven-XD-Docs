@@ -1,7 +1,6 @@
 import React from "react";
 
 export default {
-  primaryHue: 245,
   useNextSeoProps() {
     return {
       titleTemplate: "%s – Raven Bs",
@@ -33,6 +32,8 @@ export default {
       <span style={{ marginLeft: ".4em", fontWeight: 800 }}>Raven Bs</span>
     </>
   ),
+  primaryHue: 108,
+  primarySaturation: 100,
   navigation: true,
   footer: {
     text: (

@@ -13,7 +13,7 @@ export default {
         url: "https://raven-bs.tejaslamba.xyz",
         site_name: "Raven Bs",
       },
-      themeColor: "#f5f5f5",
+      themeColor: "#FFFFFF",
     };
   },
   head: (
@@ -33,6 +33,7 @@ export default {
       <span style={{ marginLeft: ".4em", fontWeight: 800 }}>Raven Bs</span>
     </>
   ),
+  navigation: true,
   footer: {
     text: (
       <span>

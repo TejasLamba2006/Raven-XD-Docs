@@ -12,7 +12,7 @@ export default {
         url: "https://raven-bs.tejaslamba.xyz",
         site_name: "Raven Bs",
       },
-      themeColor: "#FFFFFF",
+      themeColor: "#2ac603",
     };
   },
   head: (

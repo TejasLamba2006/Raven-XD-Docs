@@ -32,6 +32,21 @@ export default {
       <span style={{ marginLeft: ".4em", fontWeight: 800 }}>Raven Bs</span>
     </>
   ),
+  themeSwitch: {
+    useOptions() {
+      return {
+        light: 'Light',
+        dark: 'Dark',
+      }
+    }
+  },
+  chat: {
+    link: 'https://discord.gg/G4AH3kSYdR',
+  },
+  banner: {
+    text: "Documentation is still in progress. Please join our Discord server for help.",
+    key: "in-progress"
+  },
   primaryHue: 108,
   primarySaturation: 100,
   navigation: true,

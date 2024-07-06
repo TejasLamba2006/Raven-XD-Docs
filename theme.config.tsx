@@ -1,6 +1,4 @@
 import React from "react";
-import Head from "next/head";
-import type { NextraThemeLayoutProps } from "nextra";
 
 export default {
   primaryHue: 245,
@@ -15,16 +13,22 @@ export default {
         url: "https://raven-bs.tejaslamba.xyz",
         site_name: "Raven Bs",
       },
-      themeColor: "#f5f5f5"
+      themeColor: "#f5f5f5",
     };
   },
+  head: (
+    <>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/logo.webp" />
+    </>
+  ),
   logo: (
     <>
       <img
-        src="https://cdn.discordapp.com/icons/1257032850264428605/57f3b2d5a52ac137f80c83761b5e133b.webp?size=1024&format=webp&width=0&height=256"
+        src="/logo.webp"
         alt="logo"
-        width="30"
-        height="30"
+        width="50"
+        height="50"
       />
       <span style={{ marginLeft: ".4em", fontWeight: 800 }}>Raven Bs</span>
     </>

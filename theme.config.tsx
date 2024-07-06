@@ -7,6 +7,15 @@ export default {
   useNextSeoProps() {
     return {
       titleTemplate: "%s – Raven Bs",
+      defaultTitle: "Raven Bs",
+      description: "Raven B4, but for those who can't afford it. Raven B4, but not only for Hypixel.",
+      openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://raven-bs.tejaslamba.xyz",
+        site_name: "Raven Bs",
+      },
+      themeColor: "#f5f5f5"
     };
   },
   logo: (

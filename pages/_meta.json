@@ -1,0 +1,29 @@
+{
+  "index": "Introduction",
+  "contact": {
+    "title": "Discord",
+    "type": "page",
+    "href": "https://discord.gg/G4AH3kSYdR",
+    "newWindow": true
+  },
+  "space": {
+    "title": " ",
+    "type": "page"
+  },
+  "Download": {
+    "title": "Download",
+    "type": "page",
+    "href": "https://github.com/xia-mc/Raven-bS/releases/latest",
+    "newWindow": true
+  },
+  "Github": {
+    "title": "Github",
+    "type": "page",
+    "href": "https://github.com/TejasLamba2006/Raven-bS-Docs",
+    "newWindow": true
+  },
+  "space2": {
+    "title": " ",
+    "type": "page"
+  }
+}

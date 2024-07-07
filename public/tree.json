@@ -30,8 +30,20 @@
       "href": "\\Modules\\Fun",
       "children": [
         {
-          "name": "soon",
-          "href": "\\Modules\\Fun\\soon"
+          "name": "Extra Bobbing",
+          "href": "\\Modules\\Fun\\ExtraBobbing"
+        },
+        {
+          "name": "Flame Trail",
+          "href": "\\Modules\\Fun\\FlameTrail"
+        },
+        {
+          "name": "Sly Port",
+          "href": "\\Modules\\Fun\\SlyPort"
+        },
+        {
+          "name": "Spin",
+          "href": "\\Modules\\Fun\\Spin"
         }
       ]
     },
@@ -40,8 +52,16 @@
       "href": "\\Modules\\Minigames",
       "children": [
         {
+          "name": "Auto Who",
+          "href": "\\Modules\\Minigames\\AutoWho"
+        },
+        {
           "name": "Bed Wars",
           "href": "\\Modules\\Minigames\\BedWars"
+        },
+        {
+          "name": "Murder Mystery",
+          "href": "\\Modules\\Minigames\\MurderMystery"
         }
       ]
     },

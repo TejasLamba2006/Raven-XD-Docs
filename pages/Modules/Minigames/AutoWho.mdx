@@ -1,0 +1,95 @@
+import { Callout, Steps, Cards, Card } from "nextra/components";
+
+## AutoWho Documentation
+
+### Overview
+The AutoWho module automatically executes the `/who` command in the game, providing information about online players. It offers various settings to customize its behavior, including options to hide messages, remove bots, and use artificial methods to gather player information.
+
+<Callout type="error" emoji="🚫">
+This module is only available for Hypixel.
+</Callout>
+
+```mermaid
+sequenceDiagram
+    participant Player
+    participant AutoWho
+    participant Utils
+    participant NetworkPlayerInfo
+    participant ScorePlayerTeam
+    participant ClientChatReceivedEvent
+
+    Player ->> AutoWho: Initialize AutoWho
+    AutoWho ->> AutoWho: Register Settings
+
+    AutoWho ->> ClientChatReceivedEvent: onChatReceive(e)
+    alt e.type == 2 or Utils.nullCheck() is true
+        AutoWho ->> ClientChatReceivedEvent: return
+    end
+    AutoWho ->> Utils: stripColor(e.message.getUnformattedText())
+    alt r.startsWith(Utils.getServerName() + " has joined (")
+        AutoWho ->> AutoWho: artificial()
+    else if hideMessage.isToggled() and r.startsWith("ONLINE: ")
+        AutoWho ->> ClientChatReceivedEvent: e.setCanceled(true)
+        AutoWho ->> Utils: log.info("[CHAT] " + r)
+    end
+
+    alt artifical.isToggled()
+        AutoWho ->> Utils: getTablist()
+        loop networkPlayerInfo in tablist
+            alt removeBots.isToggled() and networkPlayerInfo.getResponseTime() > 1
+                AutoWho ->> networkPlayerInfo: continue
+            end
+            alt hideMessage.isToggled()
+                AutoWho ->> Utils: log.info("[CHAT] " + online + networkPlayerInfo.getGameProfile().getName())
+            else
+                AutoWho ->> ScorePlayerTeam: formatPlayerName(networkPlayerInfo.getPlayerTeam(), networkPlayerInfo.getGameProfile().getName())
+            end
+        end
+        alt hideMessage.isToggled()
+            AutoWho ->> Utils: log.info("[CHAT] " + (online + mc.thePlayer.getName()))
+        else
+            AutoWho ->> Utils: sendRawMessage(online + mc.thePlayer.getDisplayName().getFormattedText())
+        end
+    else
+        AutoWho ->> mc.thePlayer: sendChatMessage("/who")
+    end
+```
+### Settings
+
+#### Artificial
+- **Description**: Uses artificial methods to gather player information.
+
+<Callout type="default" emoji="️👾">
+Enable this to use artificial methods for gathering player information.
+</Callout>
+
+#### Hide Message
+- **Description**: Hides the `/who` command output message.
+
+<Callout type="default" emoji="️👾">
+Useful for keeping the chat clean by hiding the `/who` command output.
+</Callout>
+
+#### Remove Bots
+- **Description**: Removes bots from the player list.
+
+<Callout type="default" emoji="️👾">
+Enable this to exclude bots from the player list.
+</Callout>
+
+### Usage
+1. **Enable the Module**: Activate the AutoWho module from the mod's interface.
+2. **Adjust Settings**: Customize the settings to your preference. For example, enable Artificial to use advanced methods for gathering player information, or enable Hide Message to keep the chat clean.
+3. **Play**: The module will automatically execute the `/who` command and provide information about online players based on your configured settings.
+
+### Tips
+<Callout type="default" emoji="️🚀">
+Customize for Situations: Different scenarios (e.g., team play vs. solo play) might benefit from different settings.
+</Callout>
+
+### Example Configuration
+- **Artificial**: Enabled
+- **Hide Message**: Enabled
+- **Remove Bots**: Enabled
+
+By customizing these settings, you can optimize the AutoWho module to best fit your gameplay style and requirements.

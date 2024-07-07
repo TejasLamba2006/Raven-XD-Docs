@@ -4,14 +4,19 @@ import { Cards } from "nextra/components";
 import CardList from "../../components/CardList";
 import { useEffect, useState } from 'react';
 
-export default function Combat() {
+export default function Render() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    async function fetchCards() {
+       async function fetchCards() {
+      try {
       const response = await fetch('/api/cards?path=pages.Modules.Render');
       const data = await response.json();
-      setCards(data);
+           setCards(data);
+
+} catch (error) {
++      console.error('Failed to fetch cards:', error);
+     }
     }
     fetchCards();
   }, []);

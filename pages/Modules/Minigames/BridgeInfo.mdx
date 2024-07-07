@@ -1,0 +1,44 @@
+import { Callout, Steps, Cards, Card } from "nextra/components";
+
+## BridgeInfo Documentation
+
+### Overview
+The BridgeInfo module provides essential information for the Bridge minigame on Hypixel, such as enemy distance to goals and the number of blocks in your inventory. It includes settings for editing the HUD position.
+
+```mermaid
+sequenceDiagram
+    participant Player
+    participant BridgeInfo
+    participant Minecraft
+
+    Player ->> BridgeInfo: Enable BridgeInfo
+    loop On Update
+        BridgeInfo ->> Minecraft: Get Enemy Position
+        BridgeInfo ->> Minecraft: Get Goal Positions
+        BridgeInfo ->> BridgeInfo: Calculate Distances
+        BridgeInfo ->> Minecraft: Get Block Count
+    end
+    loop On Render
+        BridgeInfo ->> Minecraft: Display Info HUD
+    end
+    Player ->> BridgeInfo: Disable BridgeInfo
+    BridgeInfo ->> BridgeInfo: Reset Data
+```
+### Settings
+
+#### Edit Position
+- **Description**: Enables the editing of the HUD position.
+
+<Callout type="default" emoji="️👾">
+Enable this to customize the position of the HUD elements on your screen.
+</Callout>
+
+### Usage
+1. **Enable the Module**: Activate the BridgeInfo module from the mod's interface.
+2. **Adjust Settings**: Enable the Edit Position setting to customize the HUD position.
+3. **Play**: The module will display relevant information for the Bridge minigame, such as enemy distance to goals and the number of blocks in your inventory.
+
+### Example Configuration
+- **Edit Position**: Enabled
+
+By customizing these settings, you can optimize the BridgeInfo module to best fit your gameplay style and requirements.

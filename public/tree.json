@@ -6,8 +6,20 @@
       "href": "\\Modules\\Client",
       "children": [
         {
+          "name": "Command Line",
+          "href": "\\Modules\\Client\\CommandLine"
+        },
+        {
           "name": "G U I",
           "href": "\\Modules\\Client\\GUI"
+        },
+        {
+          "name": "Nya Proxy",
+          "href": "\\Modules\\Client\\NyaProxy"
+        },
+        {
+          "name": "Settings",
+          "href": "\\Modules\\Client\\Settings"
         }
       ]
     },
@@ -60,8 +72,20 @@
           "href": "\\Modules\\Minigames\\BedWars"
         },
         {
+          "name": "Bridge Info",
+          "href": "\\Modules\\Minigames\\BridgeInfo"
+        },
+        {
+          "name": "Duels Stats",
+          "href": "\\Modules\\Minigames\\DuelsStats"
+        },
+        {
           "name": "Murder Mystery",
           "href": "\\Modules\\Minigames\\MurderMystery"
+        },
+        {
+          "name": "Sumo Fences",
+          "href": "\\Modules\\Minigames\\SumoFences"
         }
       ]
     },

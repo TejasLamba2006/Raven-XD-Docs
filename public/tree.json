@@ -7,6 +7,10 @@
       "href": "/Modules/Client",
       "children": [
         {
+          "name": "Command Chat",
+          "href": "/Modules/Client/CommandChat"
+        },
+        {
           "name": "Command Line",
           "href": "/Modules/Client/CommandLine"
         },
@@ -31,6 +35,18 @@
         {
           "name": "Aim Assist",
           "href": "/Modules/Combat/AimAssist"
+        },
+        {
+          "name": "Block Hit",
+          "href": "/Modules/Combat/BlockHit"
+        },
+        {
+          "name": "Click Assist",
+          "href": "/Modules/Combat/ClickAssist"
+        },
+        {
+          "name": "Hit Box",
+          "href": "/Modules/Combat/HitBox"
         },
         {
           "name": "Velocity",

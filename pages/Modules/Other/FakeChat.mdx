@@ -8,11 +8,22 @@ Sends a fake chat message.
 ### Usage
 1. **Set your message**: Using the command line or command chat, set your message by using "fakechat [message]".
 2. **Enabling the module**: Each time you enable the module, the specified message is shown.
+```mermaid
+sequenceDiagram
+    participant Player
+    participant FakeChat
+    participant GameEnvironment
 
-### Tips
-<Callout type="default" emoji="️🚀">
-Bind this module to have a better experience in using it.
-</Callout>
-
-
+    Player ->> FakeChat: Enable module
+    FakeChat ->> FakeChat: Check if message contains "\\n"
+    alt Message contains "\\n"
+        FakeChat ->> FakeChat: Split message by "\\n"
+        loop For each split message
+            FakeChat ->> GameEnvironment: Display split message
+        end
+    else Message does not contain "\\n"
+        FakeChat ->> GameEnvironment: Display message
+    end
+    FakeChat ->> FakeChat: Disable module
+```
 

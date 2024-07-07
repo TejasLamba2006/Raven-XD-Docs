@@ -9,6 +9,45 @@ The Velocity module allows you to change the amount of knockback you take.
 Change your Mode setting according to the server you're going to play on.
 </Callout>
 
+```mermaid
+sequenceDiagram
+    participant Player
+    participant Velocity
+    participant GameEnvironment
+    participant Server
+
+    Player ->> Server: Receive S12PacketEntityVelocity
+    Server ->> Velocity: Intercept ReceivePacketEvent
+    Velocity ->> Velocity: Check packet type and mode
+    alt Mode is Normal
+        alt Cancel packet
+            Velocity ->> Server: Cancel packet
+        else Modify packet velocity
+            Velocity ->> Server: Modify packet motion values
+        end
+    else Mode is Hypixel
+        Velocity ->> Server: Cancel packet
+        Velocity ->> GameEnvironment: Adjust player motion
+    end
+    alt Damage boost is enabled
+        Velocity ->> GameEnvironment: Apply boost after delay
+    end
+
+    Player ->> Server: Receive S27PacketExplosion
+    Server ->> Velocity: Intercept ReceivePacketEvent
+    Velocity ->> Velocity: Check packet type and mode
+    alt Mode is Normal
+        alt Cancel explosion packet
+            Velocity ->> Server: Cancel packet
+        else Modify explosion motion values
+            Velocity ->> Server: Modify packet motion values
+        end
+    else Mode is Hypixel
+        Velocity ->> Server: Cancel packet
+        Velocity ->> GameEnvironment: Adjust player motion
+    end
+```
+
 ### Settings
 
 #### Horizontal

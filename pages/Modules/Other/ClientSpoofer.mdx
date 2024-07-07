@@ -15,6 +15,26 @@ This module is not recommended for use on most servers, as it can be considered 
 - **Lunar**: Spoofs your client type to Lunar Client.
 - **Cheatbreaker**: Spoofs your client type to Cheatbreaker.
 
-### Usage
-1. **Settings**: Select the client brand you would like to spoof to.
-2. **Enabling the module**: Enable the module
+```mermaid
+sequenceDiagram
+    participant Player
+    participant ClientSpoofer
+    participant GameEnvironment
+    participant Server
+
+    Player ->> GameEnvironment: Send packet
+    GameEnvironment ->> ClientSpoofer: Intercept SendPacketEvent
+    ClientSpoofer ->> ClientSpoofer: Check packet type
+    alt Packet is C17PacketCustomPayload
+        ClientSpoofer ->> ClientSpoofer: Get spoof mode brand
+        alt Brand is null
+            ClientSpoofer ->> GameEnvironment: Cancel packet
+        else Brand is not null
+            ClientSpoofer ->> ClientSpoofer: Create PacketBuffer with brand
+            ClientSpoofer ->> GameEnvironment: Replace packet data
+        end
+    else Packet is FMLProxyPacket and cancelForgePacket is toggled
+        ClientSpoofer ->> GameEnvironment: Cancel packet
+    end
+    GameEnvironment ->> Server: Forward packet (if not canceled)
+```

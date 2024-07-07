@@ -16,6 +16,7 @@ export default {
       themeColor: "#2ac603",
     };
   },
+  docsRepositoryBase: "https://github.com/TejasLamba2006/Raven-bS-Docs",
   head: (
     <>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,6 +49,12 @@ export default {
     text: "Documentation is still in progress. Please join our Discord server for help.",
     key: "in-progress-new",
     dismissible: false
+
+  },
+  feedback: {
+    content: null
+  },
+  editLink: {
 
   },
   primaryHue: 108,

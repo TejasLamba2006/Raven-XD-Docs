@@ -5,6 +5,65 @@ import { Callout, Steps, Cards, Card } from "nextra/components";
 ### Overview
 The AimAssist module helps you aim at other players by automatically adjusting your crosshair. It offers various settings to customize its behavior to suit different playstyles and preferences.
 
+```mermaid
+sequenceDiagram
+    participant Player
+    participant AimAssist
+    participant Utils
+    participant RotationUtils
+    participant AimSimulator
+    participant EntityPlayer
+
+    Player->>AimAssist: onUpdate()
+    AimAssist-->>AimAssist: noAction()
+    alt noAction is true
+        AimAssist-->>AimAssist: target = null
+    else noAction is false
+        AimAssist->>AimAssist: getEnemy()
+        AimAssist-->>EntityPlayer: target = selected enemy player
+        alt target is not null
+            AimAssist-->>Player: Utils.sendMessage(target.getName())
+            alt stopOnTarget is true and target is aimed at
+                AimAssist-->>AimAssist: return
+            end
+            alt blatantMode is true
+                AimAssist->>Utils: Utils.getEyePos(target)
+                Utils-->>AimAssist: pos (Vec3)
+                AimAssist->>Player: PlayerRotation.getYaw(pos)
+                PlayerRotation-->>AimAssist: yaw
+                AimAssist->>Player: PlayerRotation.getPitch(pos)
+                PlayerRotation-->>AimAssist: pitch
+                AimAssist-->>Player: mc.thePlayer.rotationYaw = yaw
+                AimAssist-->>Player: mc.thePlayer.rotationPitch = pitch
+            else blatantMode is false
+                AimAssist->>AimSimulator: AimSimulator.getLegitAim(target, mc.thePlayer, aimNearest, true, false, null, 0)
+                AimSimulator-->>AimAssist: rot (Pair<Float, Float>)
+                alt throughBlock is false and rotation hits a block
+                    AimAssist-->>AimAssist: return
+                end
+                alt horizonSpeed > 0
+                    alt smooth is true
+                        AimAssist->>AimSimulator: AimSimulator.rotMoveNoRandom(rot.first, mc.thePlayer.rotationYaw, horizonSpeed)
+                    else smooth is false
+                        AimAssist->>AimSimulator: AimSimulator.rotMove(rot.first, mc.thePlayer.rotationYaw, horizonSpeed)
+                    end
+                    AimSimulator-->>AimAssist: newYaw
+                    AimAssist-->>Player: mc.thePlayer.rotationYaw = newYaw
+                end
+                alt verticalSpeed > 0
+                    alt smooth is true
+                        AimAssist->>AimSimulator: AimSimulator.rotMoveNoRandom(rot.second, mc.thePlayer.rotationPitch, verticalSpeed)
+                    else smooth is false
+                        AimAssist->>AimSimulator: AimSimulator.rotMove(rot.second, mc.thePlayer.rotationPitch, verticalSpeed)
+                    end
+                    AimSimulator-->>AimAssist: newPitch
+                    AimAssist-->>Player: mc.thePlayer.rotationPitch = newPitch
+                end
+            end
+        end
+    end
+```
+
 ### Settings
 
 #### Horizon Speed

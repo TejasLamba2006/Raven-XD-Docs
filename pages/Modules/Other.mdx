@@ -1,1 +1,27 @@
-# Other module
+'use client';
+
+import { Cards } from "nextra/components";
+import CardList from "../../components/CardList";
+import { useEffect, useState } from 'react';
+
+export default function Combat() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    async function fetchCards() {
+      const response = await fetch('/api/cards?path=pages.Modules.Other');
+      const data = await response.json();
+      setCards(data);
+    }
+    fetchCards();
+  }, []);
+
+  return (
+    <>
+    <h1>Other Modules</h1>
+    <Cards>
+      <CardList cards={cards} />
+    </Cards>
+    </>
+  );
+}

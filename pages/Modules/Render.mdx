@@ -1,1 +1,30 @@
-# Render module
+import { Cards } from "nextra/components";
+import CardList from "../../components/CardList";
+import { useEffect, useState } from 'react';
+
+export default function Render() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+       async function fetchCards() {
+      try {
+      const response = await fetch('/tree.json');
+      const data = await response.json();
+           setCards(data.Modules.find(module => module.name === 'Render').children);
+
+} catch (error) {
++      console.error('Failed to fetch cards:', error);
+     }
+    }
+    fetchCards();
+  }, []);
+
+  return (
+    <>
+    <h1>Render Modules</h1>
+    <Cards>
+      <CardList cards={cards} />
+    </Cards>
+    </>
+  );
+}

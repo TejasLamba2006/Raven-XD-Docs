@@ -1,0 +1,103 @@
+{
+  "Developers": [],
+  "Modules": [
+    {
+      "name": "Client",
+      "href": "\\Modules\\Client",
+      "children": [
+        {
+          "name": "G U I",
+          "href": "\\Modules\\Client\\GUI"
+        }
+      ]
+    },
+    {
+      "name": "Combat",
+      "href": "\\Modules\\Combat",
+      "children": [
+        {
+          "name": "Aim Assist",
+          "href": "\\Modules\\Combat\\AimAssist"
+        },
+        {
+          "name": "Velocity",
+          "href": "\\Modules\\Combat\\Velocity"
+        }
+      ]
+    },
+    {
+      "name": "Fun",
+      "href": "\\Modules\\Fun",
+      "children": [
+        {
+          "name": "soon",
+          "href": "\\Modules\\Fun\\soon"
+        }
+      ]
+    },
+    {
+      "name": "Minigames",
+      "href": "\\Modules\\Minigames",
+      "children": [
+        {
+          "name": "Bed Wars",
+          "href": "\\Modules\\Minigames\\BedWars"
+        }
+      ]
+    },
+    {
+      "name": "Movement",
+      "href": "\\Modules\\Movement",
+      "children": [
+        {
+          "name": "soon",
+          "href": "\\Modules\\Movement\\soon"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "href": "\\Modules\\Other",
+      "children": [
+        {
+          "name": "Client Spoofer",
+          "href": "\\Modules\\Other\\ClientSpoofer"
+        },
+        {
+          "name": "Fake Chat",
+          "href": "\\Modules\\Other\\FakeChat"
+        }
+      ]
+    },
+    {
+      "name": "Player",
+      "href": "\\Modules\\Player",
+      "children": [
+        {
+          "name": "soon",
+          "href": "\\Modules\\Player\\soon"
+        }
+      ]
+    },
+    {
+      "name": "Render",
+      "href": "\\Modules\\Render",
+      "children": [
+        {
+          "name": "soon",
+          "href": "\\Modules\\Render\\soon"
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "href": "\\Modules\\World",
+      "children": [
+        {
+          "name": "soon",
+          "href": "\\Modules\\World\\soon"
+        }
+      ]
+    }
+  ]
+}

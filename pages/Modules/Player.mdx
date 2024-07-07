@@ -10,7 +10,7 @@ export default function Player() {
   useEffect(() => {
        async function fetchCards() {
       try {
-      const response = await fetch('/api/cards?path=pages\Modules\Player');
+      const response = await fetch('/api/cards?path=pages\\Modules\\Player');
       const data = await response.json();
            setCards(data);
 

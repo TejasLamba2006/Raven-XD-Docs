@@ -27,7 +27,7 @@ function transformObject(obj) {
             const fileNameWithoutExt = child.name.replace(/\.[^/.]+$/, "");
             const transformedName = transformString(fileNameWithoutExt);
             const href = child.path.split("pages")[1].replace(/\.[^/.]+$/, "");
-            toStore.push({ name: transformedName, href: href });
+            toStore.push({ name: transformedName, href: href.replaceAll("\\", "/") });
         }
         return toStore;
     }
@@ -40,7 +40,7 @@ function transformObject(obj) {
             const fileNameWithoutExt = c.name.replace(/\.[^/.]+$/, "");
             const transformedName = transformString(fileNameWithoutExt);
             const href = c.path.split("pages")[1].replace(/\.[^/.]+$/, "");
-            return { name: transformedName, href: href, children: transformObject(c) };
+            return { name: transformedName, href: href.replaceAll("\\", "/"), children: transformObject(c) };
         }).filter(Boolean);
     }
     return toStore;

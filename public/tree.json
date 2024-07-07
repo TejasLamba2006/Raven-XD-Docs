@@ -3,143 +3,143 @@
   "Modules": [
     {
       "name": "Client",
-      "href": "\\Modules\\Client",
+      "href": "/Modules/Client",
       "children": [
         {
           "name": "Command Line",
-          "href": "\\Modules\\Client\\CommandLine"
+          "href": "/Modules/Client/CommandLine"
         },
         {
           "name": "G U I",
-          "href": "\\Modules\\Client\\GUI"
+          "href": "/Modules/Client/GUI"
         },
         {
           "name": "Nya Proxy",
-          "href": "\\Modules\\Client\\NyaProxy"
+          "href": "/Modules/Client/NyaProxy"
         },
         {
           "name": "Settings",
-          "href": "\\Modules\\Client\\Settings"
+          "href": "/Modules/Client/Settings"
         }
       ]
     },
     {
       "name": "Combat",
-      "href": "\\Modules\\Combat",
+      "href": "/Modules/Combat",
       "children": [
         {
           "name": "Aim Assist",
-          "href": "\\Modules\\Combat\\AimAssist"
+          "href": "/Modules/Combat/AimAssist"
         },
         {
           "name": "Velocity",
-          "href": "\\Modules\\Combat\\Velocity"
+          "href": "/Modules/Combat/Velocity"
         }
       ]
     },
     {
       "name": "Fun",
-      "href": "\\Modules\\Fun",
+      "href": "/Modules/Fun",
       "children": [
         {
           "name": "Extra Bobbing",
-          "href": "\\Modules\\Fun\\ExtraBobbing"
+          "href": "/Modules/Fun/ExtraBobbing"
         },
         {
           "name": "Flame Trail",
-          "href": "\\Modules\\Fun\\FlameTrail"
+          "href": "/Modules/Fun/FlameTrail"
         },
         {
           "name": "Sly Port",
-          "href": "\\Modules\\Fun\\SlyPort"
+          "href": "/Modules/Fun/SlyPort"
         },
         {
           "name": "Spin",
-          "href": "\\Modules\\Fun\\Spin"
+          "href": "/Modules/Fun/Spin"
         }
       ]
     },
     {
       "name": "Minigames",
-      "href": "\\Modules\\Minigames",
+      "href": "/Modules/Minigames",
       "children": [
         {
           "name": "Auto Who",
-          "href": "\\Modules\\Minigames\\AutoWho"
+          "href": "/Modules/Minigames/AutoWho"
         },
         {
           "name": "Bed Wars",
-          "href": "\\Modules\\Minigames\\BedWars"
+          "href": "/Modules/Minigames/BedWars"
         },
         {
           "name": "Bridge Info",
-          "href": "\\Modules\\Minigames\\BridgeInfo"
+          "href": "/Modules/Minigames/BridgeInfo"
         },
         {
           "name": "Duels Stats",
-          "href": "\\Modules\\Minigames\\DuelsStats"
+          "href": "/Modules/Minigames/DuelsStats"
         },
         {
           "name": "Murder Mystery",
-          "href": "\\Modules\\Minigames\\MurderMystery"
+          "href": "/Modules/Minigames/MurderMystery"
         },
         {
           "name": "Sumo Fences",
-          "href": "\\Modules\\Minigames\\SumoFences"
+          "href": "/Modules/Minigames/SumoFences"
         }
       ]
     },
     {
       "name": "Movement",
-      "href": "\\Modules\\Movement",
+      "href": "/Modules/Movement",
       "children": [
         {
           "name": "soon",
-          "href": "\\Modules\\Movement\\soon"
+          "href": "/Modules/Movement/soon"
         }
       ]
     },
     {
       "name": "Other",
-      "href": "\\Modules\\Other",
+      "href": "/Modules/Other",
       "children": [
         {
           "name": "Client Spoofer",
-          "href": "\\Modules\\Other\\ClientSpoofer"
+          "href": "/Modules/Other/ClientSpoofer"
         },
         {
           "name": "Fake Chat",
-          "href": "\\Modules\\Other\\FakeChat"
+          "href": "/Modules/Other/FakeChat"
         }
       ]
     },
     {
       "name": "Player",
-      "href": "\\Modules\\Player",
+      "href": "/Modules/Player",
       "children": [
         {
           "name": "Auto Pot",
-          "href": "\\Modules\\Player\\AutoPot"
+          "href": "/Modules/Player/AutoPot"
         }
       ]
     },
     {
       "name": "Render",
-      "href": "\\Modules\\Render",
+      "href": "/Modules/Render",
       "children": [
         {
           "name": "soon",
-          "href": "\\Modules\\Render\\soon"
+          "href": "/Modules/Render/soon"
         }
       ]
     },
     {
       "name": "World",
-      "href": "\\Modules\\World",
+      "href": "/Modules/World",
       "children": [
         {
           "name": "soon",
-          "href": "\\Modules\\World\\soon"
+          "href": "/Modules/World/soon"
         }
       ]
     }

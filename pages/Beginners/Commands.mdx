@@ -1,0 +1,145 @@
+import { Callout, Cards, Card } from "nextra/components";
+
+## Commands Documentation
+
+### Overview
+This documentation provides a list of all available commands in the application, along with descriptions and usage instructions. The commands allow you to configure various settings and perform actions within the game.
+
+### Commands
+
+<Cards>
+  <Card title="Set API Key" href="#setkey" icon="🔑" />
+  <Card title="Set Nickname" href="#nick" icon="🎭" />
+  <Card title="Custom Name" href="#cname" icon="📝" />
+  <Card title="Duel Stats" href="#duels" icon="📊" />
+  <Card title="Set Speed" href="#setspeed" icon="⚡" />
+  <Card title="Set Velocity" href="#setvelocity" icon="🚀" />
+  <Card title="Check Ping" href="#ping" icon="📶" />
+  <Card title="Clear Commands" href="#clear" icon="🧹" />
+  <Card title="Hide Module" href="#hide" icon="🙈" />
+  <Card title="Show Module" href="#show" icon="👀" />
+  <Card title="Rename Module" href="#rename" icon="✏️" />
+  <Card title="Send Message" href="#say" icon="💬" />
+  <Card title="Set HUD Name" href="#setBName" icon="🏷️" />
+  <Card title="List Binds" href="#binds" icon="🔗" />
+  <Card title="Bind Key" href="#bind" icon="🔑" />
+  <Card title="Manage Friends" href="#friend" icon="🤝" />
+  <Card title="Manage Enemies" href="#enemy" icon="⚔️" />
+  <Card title="Toggle Debug" href="#debug" icon="🐞" />
+  <Card title="List Profiles" href="#profiles" icon="📂" />
+  <Card title="Save Profile" href="#profiles-save" icon="💾" />
+  <Card title="Load Profile" href="#profiles-load" icon="📂" />
+  <Card title="Remove Profile" href="#profiles-remove" icon="🗑️" />
+  <Card title="Help" href="#help" icon="ℹ️" />
+</Cards>
+
+### Command Descriptions
+
+#### <a id="setkey"></a> setkey [key]
+Sets the Hypixel API key for retrieving player data.
+
+<Callout type="info" emoji="🔑">
+Ensure you have a valid Hypixel API key before using this command.
+</Callout>
+
+#### <a id="nick"></a> nick [name/reset]
+Sets or resets your nickname in the game.
+
+<Callout type="default" emoji="🎭">
+Use "nick reset" to reset your nickname.
+</Callout>
+
+#### <a id="cname"></a> cname [name]
+Sets a custom name for the NameHider module.
+
+#### <a id="duels"></a> duels [player]
+Retrieves and displays duel statistics for the specified player.
+
+<Callout type="info" emoji="📊">
+Make sure you have set a valid API key using the "setkey" command.
+</Callout>
+
+#### <a id="setspeed"></a> setspeed [fly] [value]
+Sets the speed value for the Fly module.
+
+<Callout type="warning" emoji="⚠️">
+Ensure the value is between 0 and 100.
+</Callout>
+
+#### <a id="setvelocity"></a> setvelocity [h/v] [value]
+Sets the velocity value for horizontal or vertical movement.
+
+<Callout type="warning" emoji="⚠️">
+Ensure the value is between -100 and 300.
+</Callout>
+
+#### <a id="ping"></a> ping
+Checks the current ping to the server.
+
+#### <a id="clear"></a> clear
+Clears the command result list.
+
+#### <a id="hide"></a> hide [module]
+Hides the specified module in the HUD.
+
+#### <a id="show"></a> show [module]
+Shows the specified module in the HUD.
+
+#### <a id="rename"></a> rename [module] [name]
+Renames the specified module.
+
+#### <a id="say"></a> say [message]
+Sends a chat message.
+
+#### <a id="setBName"></a> setBName [name]
+Sets a custom name for the HUD.
+
+#### <a id="binds"></a> binds
+Displays all module key binds.
+
+#### <a id="bind"></a> bind [module] [key]
+Binds a key to the specified module.
+
+<Callout type="info" emoji="🔑">
+Use the module's pretty name and a valid key name.
+</Callout>
+
+#### <a id="friend"></a> friend [name/clear]
+Adds or removes a friend, or clears the friend list.
+
+<Callout type="default" emoji="🤝">
+Use "friend clear" to clear the friend list.
+</Callout>
+
+#### <a id="enemy"></a> enemy [name/clear]
+Adds or removes an enemy, or clears the enemy list.
+
+<Callout type="default" emoji="⚔️">
+Use "enemy clear" to clear the enemy list.
+</Callout>
+
+#### <a id="debug"></a> debug
+Toggles debug mode.
+
+#### <a id="profiles"></a> profiles
+Lists all available profiles.
+
+#### <a id="profiles-save"></a> profiles save [profile]
+Saves the current settings to a new profile.
+
+<Callout type="info" emoji="💾">
+Profile names must be 2 to 10 characters long and alphanumeric.
+</Callout>
+
+#### <a id="profiles-load"></a> profiles load [profile]
+Loads the specified profile.
+
+#### <a id="profiles-remove"></a> profiles remove [profile]
+Removes the specified profile.
+
+#### <a id="help"></a> help
+Displays the list of available commands.
+
+<Callout type="info" emoji="ℹ️">
+Use this command if you need help with the available commands.
+</Callout>

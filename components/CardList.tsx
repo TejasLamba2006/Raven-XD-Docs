@@ -16,7 +16,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
       {cards.map((card, index) => (
         // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
 // biome-ignore lint/correctness/noChildrenProp: <explanation>
-<Card title={card.title} href={card.href} children={''} icon={''} />
+<Card title={card.name} href={card.href} children={''} icon={''} />
       ))}
     </>
   );

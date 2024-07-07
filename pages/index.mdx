@@ -1,38 +1,50 @@
 import { Callout, Steps, Cards, Card } from "nextra/components";
 import Image from "next/image";
+import Link from "next/link";
 
-# Introducing Raven Bs
+export default function App() {
+  if(process.env.NODE_ENV === 'development') {
+    fetch('/api/tree')
+  }
+  return (
+    <>
+      <h1>Introducing Raven Bs</h1>
+      <p>Raven B4, but for those who can't afford it.</p>
+      <p>Raven B4, but not only for Hypixel.</p>
 
-Raven B4, but for those who can't afford it.
+      <h3>How to get started with Raven Bs</h3>
+      <Callout type="info">This only works with Forge 1.8.9</Callout>
+      <Steps>
+        <h3>Step 1</h3>
+        <p>
+          Download the latest version of Raven Bs from the{" "}
+          <Link href="https://github.com/xia-mc/Raven-bS/releases/latest">releases page
+          </Link>.
+        </p>
+        <h3>Step 2 Install</h3>
+        <p>the mod by dragging the downloaded file into your mods folder.</p>
+        <h3>Step 3</h3>
+        <p>Launch Minecraft and enjoy!</p>
+      </Steps>
 
-Raven B4, but not only for Hypixel.
+      <h4>Features</h4>
+      <p>
+        Raven Bs has over 9 categories of modules with over 105+ modules in
+        total. It also has a custom GUI and a lot of customization options.
+      </p>
 
-### How to get started with Raven Bs
-
-<Callout type="info">This only works with Forge 1.8.9</Callout>
-<Steps>
-### Step 1
-Download the latest version of Raven Bs from the [releases
-  page](https://github.com/xia-mc/Raven-bS/releases/latest). 
-### Step 2 Install
-  the mod by dragging the downloaded file into your mods folder. 
-### Step 3
-  Launch Minecraft and enjoy!
-</Steps>
-
-#### Features
-
-Raven Bs has over 9 categories of modules with over 105+ modules in total. It also has a custom GUI and a lot of customization options.
-
-<Cards>
-  <Card title="Client" href="/Modules/Client" />
-  <Card title="Combat" href="/Modules/Combat" />
-  <Card title="Fun" href="/Modules/Fun" />
-  <Card title="Minigames" href="/Modules/Minigames" />
-  <Card title="Movement" href="/Modules/Movement" />
-  <Card title="Other" href="/Modules/Other" />
-  <Card title="Player" href="/Modules/Player" />
-  <Card title="Render" href="/Modules/Render" />
-  <Card title="World" href="/Modules/World" />
-</Cards>
-![Raven Bs](/demo.png)
+      <Cards>
+        <Card title="Client" href="/Modules/Client" />
+        <Card title="Combat" href="/Modules/Combat" />
+        <Card title="Fun" href="/Modules/Fun" />
+        <Card title="Minigames" href="/Modules/Minigames" />
+        <Card title="Movement" href="/Modules/Movement" />
+        <Card title="Other" href="/Modules/Other" />
+        <Card title="Player" href="/Modules/Player" />
+        <Card title="Render" href="/Modules/Render" />
+        <Card title="World" href="/Modules/World" />
+      </Cards>
+          <Image src="/demo.png" alt="Raven Bs" width={500} height={300} />
+    </>
+  );
+}

@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Documentation for Raven-Bs",
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_ENV=development next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "directory-tree": "^3.5.1",
     "next": "^14.2.4",
     "nextra": "latest",
     "nextra-theme-docs": "latest",

@@ -1,5 +1,3 @@
-'use client';
-
 import { Cards } from "nextra/components";
 import CardList from "../../components/CardList";
 import { useEffect, useState } from 'react';
@@ -10,9 +8,9 @@ export default function Combat() {
   useEffect(() => {
        async function fetchCards() {
       try {
-      const response = await fetch('/api/cards?path=pages\\Modules\\Combat');
+     const response = await fetch('/tree.json');
       const data = await response.json();
-           setCards(data);
+           setCards(data.Modules.find(module => module.name === 'Combat').children);
 
 } catch (error) {
 +      console.error('Failed to fetch cards:', error);

@@ -10,7 +10,7 @@ export default function Fun() {
   useEffect(() => {
        async function fetchCards() {
       try {
-      const response = await fetch('/api/cards?path=pages.Modules.Fun');
+      const response = await fetch('/api/cards?path=pages\Modules\Fun');
       const data = await response.json();
            setCards(data);
 

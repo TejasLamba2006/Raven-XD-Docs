@@ -10,7 +10,7 @@ export default function Movement() {
   useEffect(() => {
        async function fetchCards() {
       try {
-      const response = await fetch('/api/cards?path=pages.Modules.Movement');
+      const response = await fetch('/api/cards?path=pages\Modules\Movement');
       const data = await response.json();
            setCards(data);
 

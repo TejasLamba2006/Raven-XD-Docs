@@ -4,7 +4,7 @@ import path from 'node:path';
 const transformString = (input) => input.replace(/([A-Z])/g, (_match, p1, offset) => offset > 0 ? ` ${p1}` : p1);
 
 export default async function handler(req, res) {
-    const directoryPath = path.join(process.cwd(), req.query.path.replaceAll(".", "/"));
+    const directoryPath = path.join("../../", req.query.path.replaceAll(".", "/"));
     try {
         const files = await fs.readdir(directoryPath);
         const cards = files

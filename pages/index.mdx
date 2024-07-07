@@ -1,8 +1,27 @@
 import { Callout, Steps, Cards, Card } from "nextra/components";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from 'react';
 
 export default function App() {
+   const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+       async function fetchCards() {
+      try {
+      const response = await fetch('/tree.json');
+      const data = await response.json();
+          setCards(
+            data.Modules?.map(element => {
+              return (<Card title={`${element.name} (${element.children ? element.children.length : "0"})`} href={element.href} />);
+            })
+          );
+      } catch (error) {
++      console.error('Failed to fetch cards:', error);
+     }
+    }
+    fetchCards();
+  }, []);
   return (
     <>
     <title>Best Free Raven Client</title>
@@ -15,9 +34,8 @@ export default function App() {
       <Steps>
         <h3>Step 1</h3>
         <p>
-          Download the latest version of Raven Bs from the<strong>{" "}
-          <Link href="https://github.com/xia-mc/Raven-bS/releases/latest">releases</strong> page
-          </Link>.
+          Download the latest version of Raven Bs from the{" "}
+          <a href="https://github.com/xia-mc/Raven-bS/releases/latest"><strong>releases</strong></a> page.
         </p>
         <h3>Step 2</h3>
         <p>Install the mod by dragging the downloaded file into your mods folder.</p>
@@ -32,15 +50,7 @@ export default function App() {
       </p>
 
       <Cards>
-        <Card title="Client" href="/Modules/Client" />
-        <Card title="Combat" href="/Modules/Combat" />
-        <Card title="Fun" href="/Modules/Fun" />
-        <Card title="Minigames" href="/Modules/Minigames" />
-        <Card title="Movement" href="/Modules/Movement" />
-        <Card title="Other" href="/Modules/Other" />
-        <Card title="Player" href="/Modules/Player" />
-        <Card title="Render" href="/Modules/Render" />
-        <Card title="World" href="/Modules/World" />
+      {cards.length > 0 ? cards : <p>Loading...</p>}
       </Cards>
 <Callout type="info" emoji="ℹ️">
   Raven Bs prevents Forge from sending the mod list to servers. This allows you to join your favorite servers with mods that might be blacklisted (e.g., MacroKeybinding, Perspective Mod, etc.) on servers like Hypixel.

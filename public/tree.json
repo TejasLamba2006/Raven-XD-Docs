@@ -6,8 +6,20 @@
       "href": "\\Modules\\Client",
       "children": [
         {
+          "name": "Command Line",
+          "href": "\\Modules\\Client\\CommandLine"
+        },
+        {
           "name": "G U I",
           "href": "\\Modules\\Client\\GUI"
+        },
+        {
+          "name": "Nya Proxy",
+          "href": "\\Modules\\Client\\NyaProxy"
+        },
+        {
+          "name": "Settings",
+          "href": "\\Modules\\Client\\Settings"
         }
       ]
     },

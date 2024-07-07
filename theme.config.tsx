@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default {
@@ -45,7 +46,9 @@ export default {
   },
   banner: {
     text: "Documentation is still in progress. Please join our Discord server for help.",
-    key: "in-progress"
+    key: "in-progress-new",
+    dismissible: false
+
   },
   primaryHue: 108,
   primarySaturation: 100,
@@ -54,9 +57,9 @@ export default {
     text: (
       <span>
         MIT {new Date().getFullYear()} ©{" "}
-        <a href="https://github.com/TejasLamba2006" target="_blank">
+        <Link href="https://github.com/TejasLamba2006" target="_blank" rel="noreferrer">
           TejasLamba2006
-        </a>
+        </Link>
         .
       </span>
     ),

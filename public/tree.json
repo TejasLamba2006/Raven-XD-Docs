@@ -74,8 +74,8 @@
       "href": "\\Modules\\Player",
       "children": [
         {
-          "name": "soon",
-          "href": "\\Modules\\Player\\soon"
+          "name": "Auto Pot",
+          "href": "\\Modules\\Player\\AutoPot"
         }
       ]
     },

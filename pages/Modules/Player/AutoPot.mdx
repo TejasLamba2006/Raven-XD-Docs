@@ -1,0 +1,31 @@
+import { Callout, Steps, Cards, Card } from "nextra/components";
+
+## Auto Pot Documentation
+
+### Overview
+
+<Callout type="default" emoji="️🚀">
+Bind this module to a key to automatically consume potions when your health is low.
+</Callout>
+
+### Options
+
+- **Automatically Throws Potions**: Enables the module to automatically use potions for healing or providing buffs.
+
+- **Health Threshold**: Set the health level (between 1 and 20) at which potions are automatically thrown. The default setting is 10, meaning if your health drops to this level or below, a potion will be used to heal you.
+
+- **Randomized Rotations**: When enabled, this feature randomizes your character's rotation when throwing a potion, making it harder for observers to detect the use of automation.
+
+```mermaid
+sequenceDiagram
+    participant Player
+    participant AutoPot
+    participant GameEnvironment
+
+    Player ->> GameEnvironment: Takes damage
+    GameEnvironment -->> AutoPot: Update player's health
+    AutoPot -->> AutoPot: Check health threshold
+    AutoPot ->> GameEnvironment: Adjust rotation (if random rotation enabled)
+    AutoPot ->> GameEnvironment: Throw potion
+    GameEnvironment -->> Player: Health restored
+```

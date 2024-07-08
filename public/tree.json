@@ -57,8 +57,8 @@
           "href": "/Modules/Combat/HitBox"
         },
         {
-          "name": "H It Select",
-          "href": "/Modules/Combat/HItSelect"
+          "name": "Hit Select",
+          "href": "/Modules/Combat/HitSelect"
         },
         {
           "name": "Infinite Aura",

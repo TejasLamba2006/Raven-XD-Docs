@@ -41,12 +41,36 @@
           "href": "/Modules/Combat/BlockHit"
         },
         {
+          "name": "Burst Clicker",
+          "href": "/Modules/Combat/BurstClicker"
+        },
+        {
           "name": "Click Assist",
           "href": "/Modules/Combat/ClickAssist"
         },
         {
+          "name": "Criticals",
+          "href": "/Modules/Combat/Criticals"
+        },
+        {
           "name": "Hit Box",
           "href": "/Modules/Combat/HitBox"
+        },
+        {
+          "name": "H It Select",
+          "href": "/Modules/Combat/HItSelect"
+        },
+        {
+          "name": "Infinite Aura",
+          "href": "/Modules/Combat/InfiniteAura"
+        },
+        {
+          "name": "Jump Reset",
+          "href": "/Modules/Combat/JumpReset"
+        },
+        {
+          "name": "Kill Aura",
+          "href": "/Modules/Combat/KillAura"
         },
         {
           "name": "Velocity",

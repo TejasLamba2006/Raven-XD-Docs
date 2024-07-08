@@ -1,0 +1,58 @@
+
+import { useEffect, useState } from 'react';
+
+export default function Reviews() {
+const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('/reviews.json');
+        const data = await response.json();
+        setReviews(data);
+      } catch (error) {
+        console.error('Failed to fetch reviews:', error);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+    return (<>
+    <h1>Reviews</h1>
+<article className="md:gap-8 md:grid md:grid-cols-3" style={{}}>
+    {reviews.length > 0 ? reviews.map((r)=> {
+        return (<>
+            <div>
+        <div className="flex items-center mb-6">
+            <img className="w-10 h-10 rounded-full" src={r.image} alt=""/>
+            <div className="ms-4 font-medium dark:text-white">
+                <p>{r.name}</p>
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span class={`fi fi-${r.country}`}></span>
+                </div>
+            </div>
+        </div>
+        <ul className="space-y-4 text-sm text-gray-500 dark:text-gray-400">
+            <li className="flex items-center"><svg className="w-3 h-3 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 15V9m4 6V9m4 6V9m4 6V9M2 16h16M1 19h18M2 7v1h16V7l-8-6-8 6Z"/></svg>{r.designation}</li>
+        </ul>
+    </div>
+    <div className="col-span-2 mt-6 md:mt-0">
+        <div className="flex items-start mb-5">
+            <div className="pe-4">
+                <footer>
+                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">Reviewed: <time dateTime={r.time}>{(new Date(r.time)).toLocaleString('en-US', {year: 'numeric',month: 'long',day: 'numeric',})}</time></p>
+                </footer>
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white">{r.review.tittle}</h4>
+            </div>
+        <p className={r.review.rating > 7 ? "bg-green-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded" : r.review.rating > 4 ? "bg-yellow-600 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded" : "bg-red-600 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded"}>{r.review.rating}</p>        
+        </div>
+        {r.review.description.split('\n').map((line, index) => {
+            return <p className="mb-2 text-gray-500 dark:text-gray-400">{line}</p>
+        })}
+    </div></>)
+    }) : <p>No reviews yet</p>}
+</article>
+
+    </>)
+}

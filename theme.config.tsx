@@ -19,8 +19,17 @@ export default {
   docsRepositoryBase: "https://github.com/TejasLamba2006/Raven-bS-Docs",
   head: (
     <>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/logo.webp" />
+    <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    </style>
     </>
   ),
   logo: (
@@ -46,7 +55,9 @@ export default {
     link: 'https://discord.gg/G4AH3kSYdR',
   },
   banner: {
-    text: "Documentation is still in progress. Please join our Discord server for help.",
+    text: (<>Documentation is still in progress. Please join our Discord server for help.<div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+      <div className="bg-customGreen text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{ width: "45%" }}> Completed 45%</div>
+      </div></>),
     key: "in-progress-new",
     dismissible: false
 

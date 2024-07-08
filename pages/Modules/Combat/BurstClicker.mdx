@@ -1,0 +1,110 @@
+import { Callout, Steps, Cards, Card } from "nextra/components";
+
+## BurstClicker Documentation
+
+### Overview
+The BurstClicker module automates rapid clicking in bursts. It offers various settings to customize its behavior, such as click speed, delay, randomization, and block placement.
+
+```mermaid
+sequenceDiagram
+    participant Player
+    participant BurstClicker
+    participant Utils
+    participant Reflection
+    participant Minecraft
+
+    Player ->> BurstClicker: Enable BurstClicker
+    alt clicks > 0 and mc.currentScreen == null and mc.inGameHasFocus
+        BurstClicker ->> BurstClicker: Schedule click task
+        loop for each click
+            alt i % 2 == 0
+                BurstClicker ->> BurstClicker: l_c = true
+                alt delay > 0
+                    alt delayRandomizer is true
+                        BurstClicker ->> Utils: getRandomDelay()
+                        Utils -->> BurstClicker: realDel
+                    else delayRandomizer is false
+                        BurstClicker ->> BurstClicker: realDel = delay
+                    end
+                    BurstClicker ->> BurstClicker: Thread.sleep(realDel)
+                end
+            else i % 2 != 0
+                BurstClicker ->> BurstClicker: l_r = true
+            end
+        end
+        BurstClicker ->> BurstClicker: disable()
+    else
+        BurstClicker ->> BurstClicker: disable()
+    end
+
+    BurstClicker ->> BurstClicker: onDisable()
+    BurstClicker ->> BurstClicker: l_c = false
+    BurstClicker ->> BurstClicker: l_r = false
+
+    BurstClicker ->> RenderTickEvent: r(ev)
+    alt l_c is true
+        BurstClicker ->> BurstClicker: c(true)
+        BurstClicker ->> BurstClicker: l_c = false
+    else l_r is true
+        BurstClicker ->> BurstClicker: c(false)
+        BurstClicker ->> BurstClicker: l_r = false
+    end
+
+    BurstClicker ->> Reflection: setButton(1 or 0, st)
+    Reflection ->> Minecraft: rightClick() or KeyBinding.setKeyBindState()
+```
+### Settings
+
+#### Artificial Drag Clicking
+- **Description**: Enables artificial drag clicking.
+
+#### Clicks
+- **Description**: Sets the number of clicks per burst.
+- **Range**: 0.0 to 50.0
+- **Increment**: 1.0
+
+<Callout type="default" emoji="️👾">
+Adjust the number of clicks per burst to suit your needs.
+</Callout>
+
+#### Delay (ms)
+- **Description**: Sets the delay between clicks in milliseconds.
+- **Range**: 1.0 to 40.0
+- **Increment**: 1.0
+
+<Callout type="default" emoji="️👾">
+Set an appropriate delay to avoid detection.
+</Callout>
+
+#### Delay Randomizer
+- **Description**: Randomizes the delay between clicks to mimic human behavior.
+
+<Callout type="info" emoji="️🚀">
+Enable this to make the clicking pattern less predictable.
+</Callout>
+
+#### Place When Block
+- **Description**: Places a block when a block is held.
+
+<Callout type="info" emoji="️🚀">
+Enable this to place blocks automatically when holding a block item.
+</Callout>
+
+### Usage
+1. **Enable the Module**: Activate the BurstClicker module from the mod's interface.
+2. **Adjust Settings**: Customize the settings to your preference. For example, set the number of clicks and enable the delay randomizer for a more human-like clicking pattern.
+3. **Play**: The module will automate burst clicking based on your configured settings.
+
+### Tips
+<Callout type="default" emoji="️🚀">
+Customize for Situations: Different scenarios (e.g., PvP combat vs. building) might benefit from different settings.
+</Callout>
+
+### Example Configuration
+- **Artificial Drag Clicking**: Enabled
+- **Clicks**: 20.0
+- **Delay (ms)**: 10.0
+- **Delay Randomizer**: Enabled
+- **Place When Block**: Enabled
+
+By customizing these settings, you can optimize the BurstClicker module to best fit your gameplay style and requirements.

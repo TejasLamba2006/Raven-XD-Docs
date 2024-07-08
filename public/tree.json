@@ -73,6 +73,14 @@
           "href": "/Modules/Combat/KillAura"
         },
         {
+          "name": "More K B",
+          "href": "/Modules/Combat/MoreKB"
+        },
+        {
+          "name": "Reach",
+          "href": "/Modules/Combat/Reach"
+        },
+        {
           "name": "Velocity",
           "href": "/Modules/Combat/Velocity"
         }

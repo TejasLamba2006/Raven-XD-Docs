@@ -26,7 +26,7 @@ export default {
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/logo.webp" />
-      <style>@tailwind base; @tailwind components; @tailwind utilities;</style>
+
     </>
   ),
   logo: (
@@ -54,10 +54,10 @@ export default {
         <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
           <div
             className="bg-customGreen text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
-            style={{ width: "45%" }}
+            style={{ width: "69%" }}
           >
             {" "}
-            Completed 45%
+            Completed 69%
           </div>
         </div>
       </>

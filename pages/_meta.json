@@ -1,5 +1,9 @@
 {
   "index": "Introduction",
+  "Beginners": "Beginners",
+  "Modules": "Modules",
+  "Developers": "Developers",
+  "Scripting": "Scripting",
   "space": {
     "title": " ",
     "type": "page"

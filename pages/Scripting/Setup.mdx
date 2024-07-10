@@ -1,1 +1,50 @@
+import { Callout, Steps, Cards, Card } from "nextra/components";
+import Image from "next/image";
+import Link from "next/link";
+
 # Setup
+<Callout>
+  You must install the Java Development Kit (JDK) to create and use scripts!
+</Callout>
+
+### Installing the Java Development Kit
+To compile Java scripts, you need to install a Java Development Kit (JDK). While your system may have a Java Runtime Environment (JRE), it only runs Java applications and lacks the tools for compilation.
+
+You can download the Java 8 JDK from [Oracle](https://www.oracle.com/java/technologies/downloads/#java8-windows). If you prefer not to create an Oracle account, use this [alternative download link](https://www.mediafire.com/file/7mw7yowpnebqjl5/jdk-8u371-windows-x64.exe/file).
+
+### Setting the Java Executable
+<Callout type="info">
+  On Windows, the Java executable is typically located at <br/>
+  `C:\Program Files\Java\jdk<your-version>\bin\javaw.exe{:scala}`.
+</Callout>
+
+**To configure the Java executable in the default Minecraft Launcher, follow these steps:**
+<Steps>
+`1`. Navigate to the "Installations" tab in the launcher interface.<br/>
+`2`. Locate the launch profile for which you want to set the Java executable.<br/>
+`3`. Click the button with three dots on the right-hand side of the launch profile.<br/>
+`4`. Select "Edit" from the drop-down menu.<br/>
+`5`. Click "More Options" to expand and reveal additional settings.<br/>
+`6`. In the "More Options" section, find the "Java executable" field.<br/>
+`7`. Paste the path to `javaw.exe` corresponding to your Java installation into the field.
+</Steps>
+
+### Creating Scripts
+<Callout type="warning">
+  Raven scripts are written in Java, so your code must be in a `.java` file.
+</Callout>
+- Use a code editor like Brackets or Visual Studio Code for writing scripts.
+- Place all scripts in the `scripts` folder to use them. Files starting with an underscore `_` will not be recognized as valid scripts.
+
+### Using Scripts
+<Callout type="info">
+  The GUI has a category labeled "Scripts" where all scripts in your scripts folder are displayed.
+</Callout>
+- To add scripts, click the "Open Folder" button in the Manager module and drag your scripts into the folder.
+- Whenever you add or modify a script, press the "Load Scripts" button to apply the changes.
+- If a script contains errors, it will appear in <span className="text-red-500">red</span> and cannot be enabled. An error message will also appear in the chat window with specific details.
+
+### Scripting API
+The Raven scripting API provides classes and methods to interact with the game world and perform various tasks. It's designed to be user-friendly, even for beginners.
+
+As this client is an addition to **Raven b4**, we have included additional features in the scripting API. You can find the API documentation [here](/Scripting/API). For the rest of the documentation, visit Blowsy's original Raven b4 docs by clicking [here](https://blowsy.gitbook.io/raven).

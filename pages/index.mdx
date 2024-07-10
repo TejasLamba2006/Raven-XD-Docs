@@ -7,117 +7,179 @@ import { Analytics } from "@vercel/analytics/next"
 export default function App() {
    const [cards, setCards] = useState([]);
 
-  useEffect(() => {
-       async function fetchCards() {
-      try {
-      const response = await fetch('/tree.json');
-      const data = await response.json();
-          setCards(
-            data.Modules?.map(element => {
-              return (<Card title={`${element.name} (${element.children ? element.children.length : "0"})`} href={element.href} />);
-            })
-          );
-      } catch (error) {
-+      console.error('Failed to fetch cards:', error);
-     }
-    }
-    fetchCards();
+useEffect(() => {
+async function fetchCards() {
+try {
+const response = await fetch('/tree.json');
+const data = await response.json();
+setCards(
+data.Modules?.map(element => {
+return (<Card title={`${element.name} (${element.children ? element.children.length : "0"})`} href={element.href} />);
+})
+);
+} catch (error) {
+
+-      console.error('Failed to fetch cards:', error);
+
+  }
+  }
+  fetchCards();
   }, []);
   return (
-    <>
-    <Analytics/>
-    <title>Best Free Raven Client</title>
 
-      <h1>Introducing Raven Bs</h1>
-      <p>Raven B4, but for those who can't afford it.</p>
-      <p>Raven B4, but not only for Hypixel.</p>
-      <br/>
+      <>
+
+  <Analytics />
+  <title>Best Free Raven Client</title>
+
+        <h1>Introducing Raven XD</h1>
+        <p>Raven B4, but for those who can't afford it.</p>
+        <p>Raven B4, but not only for Hypixel.</p>
+        <br/>
 
 <div className="flex items-center mb-5">
-    <p className="text-customGreen text-sm font-semibold inline-flex items-center p-1.5 rounded dark:text-customGreen">8.7</p>
-    <p className="ms-2 font-medium text-gray-900 dark:text-white">Excellent</p>
-    <span className="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
-    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">0 reviews (Yea I need some reviews go leave a review so I can add you <a href="Beginners/Reviews">here</a>)</p>
-    <a href="https://discord.gg/G4AH3kSYdR" className="ms-auto text-sm font-medium text-customGreen hover:underline dark:text-customGreen">Leave a review</a>
+  <p className="text-customGreen text-sm font-semibold inline-flex items-center p-1.5 rounded dark:text-customGreen">
+    8.7
+  </p>
+  <p className="ms-2 font-medium text-gray-900 dark:text-white">Excellent</p>
+  <span className="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
+  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+    0 reviews (Yea I need some reviews go leave a review so I can add you{" "}
+    <a href="Beginners/Reviews">here</a>)
+  </p>
+  <a
+    href="https://discord.gg/G4AH3kSYdR"
+    className="ms-auto text-sm font-medium text-customGreen hover:underline dark:text-customGreen"
+  >
+    Leave a review
+  </a>
 </div>
 <div className="gap-8 sm:grid sm:grid-cols-2">
-    <div>
-        <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">AimAssist</dt>
-            <dd className="flex items-center mb-3">
-                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-                    <div className="bg-customGreen h-2.5 rounded dark:bg-customGreen" style={{width: "88%"}}></div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">8.8</span>
-            </dd>
-        </dl>
-        <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">KillAura</dt>
-            <dd className="flex items-center mb-3">
-                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-                    <div className="bg-customGreen h-2.5 rounded dark:bg-customGreen" style={{width: "89%"}}></div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">8.9</span>
-            </dd>
-        </dl>
-        <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Other Mods Compatibility</dt>
-            <dd className="flex items-center mb-3">
-                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-                    <div className="bg-customGreen h-2.5 rounded dark:bg-customGreen" style={{width: "88%"}}></div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">8.8</span>
-            </dd>
-        </dl>
-        <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Help and Support</dt>
-            <dd className="flex items-center">
-                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-                    <div className="bg-customGreen h-2.5 rounded dark:bg-customGreen" style={{width: "54%"}}></div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">5.4</span>
-            </dd>
-        </dl>
-    </div>
-    <div>
-        <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Value for time</dt>
-            <dd className="flex items-center mb-3">
-                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-                    <div className="bg-customGreen h-2.5 rounded dark:bg-customGreen" style={{width: "89%"}}></div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">8.9</span>
-            </dd>
-        </dl>
-        <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Cleanliness</dt>
-            <dd className="flex items-center mb-3">
-                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-                    <div className="bg-customGreen h-2.5 rounded dark:bg-customGreen" style={{width: "70%"}}></div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">7.0</span>
-            </dd>
-        </dl>
-        <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Silent</dt>
-            <dd className="flex items-center">
-                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-                    <div className="bg-customGreen h-2.5 rounded dark:bg-customGreen" style={{width: "89%"}}></div>
-                </div>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">8.9</span>
-            </dd>
-        </dl>
-    </div>
+  <div>
+    <dl>
+      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        AimAssist
+      </dt>
+      <dd className="flex items-center mb-3">
+        <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+          <div
+            className="bg-customGreen h-2.5 rounded dark:bg-customGreen"
+            style={{ width: "88%" }}
+          ></div>
+        </div>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          8.8
+        </span>
+      </dd>
+    </dl>
+    <dl>
+      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        KillAura
+      </dt>
+      <dd className="flex items-center mb-3">
+        <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+          <div
+            className="bg-customGreen h-2.5 rounded dark:bg-customGreen"
+            style={{ width: "89%" }}
+          ></div>
+        </div>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          8.9
+        </span>
+      </dd>
+    </dl>
+    <dl>
+      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        Other Mods Compatibility
+      </dt>
+      <dd className="flex items-center mb-3">
+        <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+          <div
+            className="bg-customGreen h-2.5 rounded dark:bg-customGreen"
+            style={{ width: "88%" }}
+          ></div>
+        </div>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          8.8
+        </span>
+      </dd>
+    </dl>
+    <dl>
+      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        Help and Support
+      </dt>
+      <dd className="flex items-center">
+        <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+          <div
+            className="bg-customGreen h-2.5 rounded dark:bg-customGreen"
+            style={{ width: "54%" }}
+          ></div>
+        </div>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          5.4
+        </span>
+      </dd>
+    </dl>
+  </div>
+  <div>
+    <dl>
+      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        Value for time
+      </dt>
+      <dd className="flex items-center mb-3">
+        <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+          <div
+            className="bg-customGreen h-2.5 rounded dark:bg-customGreen"
+            style={{ width: "89%" }}
+          ></div>
+        </div>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          8.9
+        </span>
+      </dd>
+    </dl>
+    <dl>
+      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        Cleanliness
+      </dt>
+      <dd className="flex items-center mb-3">
+        <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+          <div
+            className="bg-customGreen h-2.5 rounded dark:bg-customGreen"
+            style={{ width: "70%" }}
+          ></div>
+        </div>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          7.0
+        </span>
+      </dd>
+    </dl>
+    <dl>
+      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        Silent
+      </dt>
+      <dd className="flex items-center">
+        <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+          <div
+            className="bg-customGreen h-2.5 rounded dark:bg-customGreen"
+            style={{ width: "89%" }}
+          ></div>
+        </div>
+        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          8.9
+        </span>
+      </dd>
+    </dl>
+  </div>
 </div>
 
-
-      <h3>How to get started with Raven Bs</h3>
+      <h3>How to get started with Raven XD</h3>
       <Callout type="info">This only works with Forge 1.8.9</Callout>
       <Steps>
         <h3>Step 1</h3>
         <p>
-          Download the latest version of Raven Bs from the{" "}
-          <a href="https://github.com/xia-mc/Raven-bS/releases/latest"><strong>releases</strong></a> page.
+          Download the latest version of Raven XD from the{" "}
+          <a href="https://github.com/xia-mc/Raven-XD/releases/latest"><strong>releases</strong></a> page.
         </p>
         <h3>Step 2</h3>
         <p>Install the mod by dragging the downloaded file into your mods folder.</p>
@@ -127,7 +189,7 @@ export default function App() {
 
       <h4>Features</h4>
       <p>
-        Raven Bs has over 9 categories of modules with over 105+ modules in
+        Raven XD has over 9 categories of modules with over 105+ modules in
         total. It also has a custom GUI and a lot of customization options.
       </p>
 
@@ -137,13 +199,14 @@ export default function App() {
         <svg aria-hidden="true" classNameName="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-customGreen" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
         <span classNameName="sr-only">Loading...</span>
     </div>
+
 </div>}
       </Cards>
 <Callout type="info" emoji="ℹ️">
-  Raven Bs prevents Forge from sending the mod list to servers. This allows you to join your favorite servers with mods that might be blacklisted (e.g., MacroKeybinding, Perspective Mod, etc.) on servers like Hypixel.
+  Raven XD prevents Forge from sending the mod list to servers. This allows you to join your favorite servers with mods that might be blacklisted (e.g., MacroKeybinding, Perspective Mod, etc.) on servers like Hypixel.
 </Callout>
 <br/>
-          <Image src="/demo.png" alt="Raven Bs" width={1920} height={1080} />
+          <Image src="/demo.png" alt="Raven XD" width={1920} height={1080} />
     </>
   );
 }

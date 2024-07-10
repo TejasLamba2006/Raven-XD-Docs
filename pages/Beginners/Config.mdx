@@ -2,55 +2,90 @@ import { Callout, Steps, Cards, Card } from "nextra/components";
 import Image from "next/image";
 import Link from "next/link";
 
-# Configs and Profiles in Raven Bs
-In Raven Bs, configs are referred to as profiles.
+# Configs and Profiles in Raven XD
+
+In Raven XD, configs are referred to as profiles.
 
 ### What Are Profiles?
+
 Profiles let you save your settings so you can easily load them later. This feature is handy when you have a preferred setup for certain activities.
 
 <Cards>
-<Card title="Creating a profile" href="#creating-a-profile" icon="✏" />
-<Card title="Loading a profile" href="#loading-a-profile" icon="📂" />
-<Card title="Saving a profile" href="#how-to-save-a-profile" icon="💾" />
-<Card title="Profile storage location" href="#profile-storage-location" icon="📁"/>
+  <Card title="Creating a profile" href="#creating-a-profile" icon="✏" />
+  <Card title="Loading a profile" href="#loading-a-profile" icon="📂" />
+  <Card title="Saving a profile" href="#how-to-save-a-profile" icon="💾" />
+  <Card
+    title="Profile storage location"
+    href="#profile-storage-location"
+    icon="📁"
+  />
 </Cards>
 
 ### Creating a Profile
+
 <Steps>
-### Step 1
-Navigate to your <a href="/Modules/Client/GUI">GUI</a> and select the profile settings.
-<Image src="/beginner_1.png" width={212} height={116} />
-<Callout type="info">The default shortcut for accessing the GUI is <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">RSHIFT</kbd>.</Callout>
-### Step 2
-Right-click on "Manager" and select "Create Profile".
+  ### Step 1 Navigate to your <a href="/Modules/Client/GUI">GUI</a> and select
+  the profile settings.
+  <Image src="/beginner_1.png" width={212} height={116} />
+  <Callout type="info">
+    The default shortcut for accessing the GUI is{" "}
+    <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+      RSHIFT
+    </kbd>
+    .
+  </Callout>
+  ### Step 2 Right-click on "Manager" and select "Create Profile".
 </Steps>
-<Callout type="default">Profiles can also be created using the Commands. <Link href="/Beginners/Commands"><strong>Click here</strong></Link> to know more about this</Callout>
+<Callout type="default">
+  Profiles can also be created using the Commands.{" "}
+  <Link href="/Beginners/Commands">
+    <strong>Click here</strong>
+  </Link>{" "}
+  to know more about this
+</Callout>
 
 ### Loading a Profile
+
 <Steps>
-### Step 1
-Go to your <a href="/Modules/Client/GUI">GUI</a> and select the profile settings.
-<Image src="/beginner_1.png" width={212} height={116} />
-<Callout type="info">Remember, the default shortcut for the GUI is <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">RSHIFT</kbd>.</Callout>
-### Step 2
-Left-click on the profile you wish to load.
+  ### Step 1 Go to your <a href="/Modules/Client/GUI">GUI</a> and select the
+  profile settings.
+  <Image src="/beginner_1.png" width={212} height={116} />
+  <Callout type="info">
+    Remember, the default shortcut for the GUI is{" "}
+    <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+      RSHIFT
+    </kbd>
+    .
+  </Callout>
+  ### Step 2 Left-click on the profile you wish to load.
 </Steps>
 
 ### How to Save a Profile
+
 <Steps>
-### Step 1
-First, open your <a href="/Modules/Client/GUI">GUI</a> and go to the profile settings.
-<Image src="/beginner_1.png" width={212} height={116} />
-<Callout type="info">Remember, you can open the GUI by pressing <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">RSHIFT</kbd>.</Callout>
-### Step 2
-Next, find the profile you wish to save. Right-click on it and choose "Save Profile".
-<Callout type="error" emoji="🚫">
-Important: If you don't save your profile, any changes you've made will not be saved. This means you'll lose your changes if you switch profiles or exit Minecraft.
-</Callout>
+  ### Step 1 First, open your <a href="/Modules/Client/GUI">GUI</a> and go to
+  the profile settings.
+  <Image src="/beginner_1.png" width={212} height={116} />
+  <Callout type="info">
+    Remember, you can open the GUI by pressing{" "}
+    <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+      RSHIFT
+    </kbd>
+    .
+  </Callout>
+  ### Step 2 Next, find the profile you wish to save. Right-click on it and choose
+  "Save Profile".
+  <Callout type="error" emoji="🚫">
+    Important: If you don't save your profile, any changes you've made will not
+    be saved. This means you'll lose your changes if you switch profiles or exit
+    Minecraft.
+  </Callout>
 </Steps>
 
 ### Profile Storage Location
+
 Your profiles are stored in the `keystrokes` folder, located in your `.minecraft` directory.
+
 <div>
   <Callout type="info">
     To access your `.minecraft` directory, type `%appdata%.minecraft` here

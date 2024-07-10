@@ -1,7 +1,7 @@
 {
-  "name": "raven-bs-docs",
+  "name": "raven-xd-docs",
   "version": "1.0.0",
-  "description": "Documentation for Raven-Bs",
+  "description": "Documentation for Raven-XD",
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev",
     "build": "next build",

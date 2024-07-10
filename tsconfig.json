@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "..&pages/Modules/Combat.mdx", "pages/Beginners/Reviews.mdx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "..&pages/Modules/Combat.mdx", "pages/Beginners/Reviews.mdx", "next.config.mjs"],
   "exclude": ["node_modules"]
 }

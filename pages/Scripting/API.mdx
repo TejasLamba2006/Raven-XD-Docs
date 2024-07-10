@@ -1,4 +1,23 @@
 # Scripting API
 This documents all the changes done by the Raven team to the original Raven b4 API. For the rest of the documentation, visit Blowsy's original Raven b4 docs by clicking [here](https://blowsy.gitbook.io/raven).
 
-### Coming Soon
+### Raven-XD [`Release b1.7.0`](https://github.com/xia-mc/Raven-XD/releases/tag/b1.7.0)
+Now you can use the 'ModeSetting' object instead of the 'SliderSetting' option. This change allows for a more versatile setting system within scripts. Here's how you can transition from using `SliderSetting` to `ModeSetting`:
+
+Previously with `SliderSetting`:
+```java
+modules.registerSlider(String name, int defaultValue, String[] stringArray);
+```
+
+Now with `ModeSetting`:
+```java
+modules.registerMode(String name, int defaultValue, String[] stringArray);
+```
+
+The `ModeSetting` API is similar to the `SliderSetting` option mode, providing a seamless transition for developers. Meanwhile, the old `SliderSetting` option mode remains available for use.
+
+Additionally, a new feature `visibleCheck` has been introduced in the script system. This feature allows for dynamic visibility of script settings based on certain conditions. To use this feature, simply add a `Supplier<Boolean>` parameter to the end of the original setting registration, like so:
+```java
+modules.registerButton("aSetting", true, () -> 1 + 1 == 2);
+```
+This example demonstrates the setting being visible only if the condition `1+1=2` is met, showcasing the flexibility of the new script system enhancements.

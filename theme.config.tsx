@@ -16,7 +16,7 @@ export default {
       },
     };
   },
-  docsRepositoryBase: "https://github.com/TejasLamba2006/Raven-XD-Docs",
+  docsRepositoryBase: "https://github.com/TejasLamba2006/Raven-XD-Docs/tree/main",
   head: (
     <>
       <meta theme-color="#2ac603" />

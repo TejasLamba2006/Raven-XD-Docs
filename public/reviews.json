@@ -15,7 +15,7 @@
     {
          "id": 2,
   "name": "kingdempa",
-  "country": "Sweden",
+  "country": "se",
   "designation": "Member",
   "time": "Sat Jul 13 2024",
   "image": "https://cdn.discordapp.com/avatars/863061849397264444/68bbe88290b8f41bfc3a4c754b08b42c.webp",
@@ -23,6 +23,45 @@
     "rating": "7",
     "title": "Best free client in years!",
     "description": "this is the one of the best free clients that have released in the last few years its really amazing that this is free."
+  }
+},
+    {
+         "id": 3,
+ "name": "ht3n",
+  "country": "null",
+  "designation": "Member",
+  "time": "Sat Jul 13 2024",
+  "image": "https://cdn.discordapp.com/avatars/731846199140810843/565452fca9fa7c3e6e0607fa5fb9977e.webp",
+  "review": {
+    "rating": "8",
+    "title": "Pro",
+    "description": "Good client for its price i mean it cant hvh good but its a good choice\nfix bedaura plz ty"
+  }
+},
+    {
+         "id": 4,
+  "name": "prestigelocker302",
+  "country": "null",
+  "designation": "Member",
+  "time": "Sat Jul 13 2024",
+  "image": "https://cdn.discordapp.com/avatars/1253988554950967360/1628fc11e7961d85181295493426b775.webp",
+  "review": {
+    "rating": "9",
+    "title": "very sigma clinet",
+    "description": "9/10 client overall only problem that it silent flags alot but can be solved with using a semi blatant cfg"
+  }
+},
+     {
+         "id": 5,
+ "name": "oopaul",
+  "country": "at",
+  "designation": "Member",
+  "time": "Sat Jul 13 2024",
+  "image": "https://cdn.discordapp.com/avatars/728691182926037116/9aae424354a67039f3ffa05a2ff064f1.webp",
+  "review": {
+    "rating": "10",
+    "title": "good glient for blocksmc hypixel etc",
+    "description": "i like how it gets so many updates."
   }
 }
 ]

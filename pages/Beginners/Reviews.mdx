@@ -43,7 +43,7 @@ const [reviews, setReviews] = useState([]);
                 <footer>
                     <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">Reviewed: <time dateTime={r.time}>{(new Date(r.time)).toLocaleString('en-US', {year: 'numeric',month: 'long',day: 'numeric',})}</time></p>
                 </footer>
-                <h4 className="text-xl font-bold text-gray-900 dark:text-white">{r.review.tittle}</h4>
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white">{r.review.title}</h4>
             </div>
         <p className={r.review.rating > 7 ? "bg-green-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded" : r.review.rating > 4 ? "bg-yellow-600 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded" : "bg-red-600 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded"}>{r.review.rating}</p>        
         </div>
